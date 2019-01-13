@@ -60,6 +60,7 @@ This project demonstrates:
 - The ability to pull data from an external API endpoints
 - The ability to parse JSON formatted data, objects and arrays
 - The ability to handle user input and errors
+- Handling asynchronous responses
 
 Thank you for taking the time to look at this sample project.
 
