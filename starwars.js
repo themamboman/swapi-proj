@@ -53,6 +53,7 @@ async function main() {
 	printAllRequestedPeople();
 };
 
+// print all the people/residents that are listed under a planet's object entry in the unified array
 function printAllRequestedPeople() {
 	var bFound = false;
 
@@ -76,6 +77,7 @@ function printAllRequestedPeople() {
 
 };
 
+// print out the basic planets and people object arrays (one of the requirements of the task)
 function printBasicInfo() {
 	console.log("Planets:");
 	console.log("--------");
@@ -86,6 +88,7 @@ function printBasicInfo() {
 	console.log(JSON.stringify(minPeople, null, 4));
 };
 
+// create a single array of data objects that have the combined planet names and people/residents of that planet
 function createUnifiedArray() {
 	// this function will build an array of objects based on the planet name, listing all resident names
 	// the raw planet data already had a residents array. This replicates that part but with names
@@ -109,12 +112,13 @@ function createUnifiedArray() {
 	//console.log(unified);
 }
 
+// load the raw planet data from the swapi.co website and build a new array with minimal information about each entry.  This is an asynchronous function
 async function loadPlanets() {
 	var obj = {};
 	var min = {}; //'name':'','numresidents':0,'url':''};
 	var bDone = false;
 
-	console.log(" in loadPlanets()... ");
+	//console.log(" in loadPlanets()... ");
 	// get first page and see if there are any more
 	var p = await swapi.get('https://swapi.co/api/planets/');
 	
@@ -142,12 +146,14 @@ async function loadPlanets() {
 	}
 };
 
+
+// load the raw people data from the swapi.co website and build a new array with minimal information about each entry.  This is an asynchronous function
 async function loadPeople() {
 	var obj = {};
 	var min = {};
 	var bDone = false;
 
-	console.log("in loadPeople");
+	//console.log("in loadPeople");
 	// get first page and see if there are any mor
 	var p = await swapi.get('https://swapi.co/api/people/');
 
@@ -175,6 +181,7 @@ async function loadPeople() {
   
 };
 
+// utility function to replace a planet URL with the planet name (makes things easier later)
 function findPlanetFromURL( url ) {
 	var name = url;
 
@@ -187,6 +194,7 @@ function findPlanetFromURL( url ) {
 	return name;
 };
 
+// pulls the arguments from the command line, combining multi-word planet names if necessary
 function getArgs() {
 	var arrLen = process.argv.length;
 	var name = '';
