@@ -1,0 +1,26 @@
+{
+  "name": "swapi-proj",
+  "version": "1.0.0",
+  "description": "Swapi-proj for PlayOn! Sports",
+  "main": "starwars.js",
+  "scripts": {
+    "test": "node starwars.js Tatooine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themamboman/swapi-proj.git"
+  },
+  "keywords": [
+    "swapi"
+  ],
+  "author": "David Gentry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/themamboman/swapi-proj/issues"
+  },
+  "homepage": "https://github.com/themamboman/swapi-proj#readme",
+  "dependencies": {
+    "nexe": "^2.0.0-rc.34",
+    "swapi-node": "^0.4.4"
+  }
+}
